@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>RCC Beam AI Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            RCC Beam Design AI Assistant 👷
+        </div>
+
+        <div class="chat-section">
+
+            <div class="messages" id="messages">
+                <div class="message ai">
+                    Hello! I'm your AI Structural Engineering Assistant. Describe your RCC beam design requirements, and I'll analyze it for you. For example: "Design a 6m span beam with 25 kN/m load, M25 concrete, and Fe415 steel."
+                </div>
+            </div>
+
+            <div class="input-area">
+                <textarea id="message" placeholder="Type your beam design query here..." rows="1"></textarea>
+                <div class="button-group">
+                    <button onclick="sendMessage()">Send</button>
+                    <button class="clear" onclick="clearChat()">Clear</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="report-section">
+        <div class="report-card">
+            <h3>Input Summary</h3>
+            <table class="report-table" id="inputTable">
+                <tr><th>Parameter</th><th>Value</th></tr>
+                <tr><td>Span (L)</td><td id="inputL">-</td></tr>
+                <tr><td>Load (w)</td><td id="inputW">-</td></tr>
+                <tr><td>Concrete Grade (fck)</td><td id="inputFck">-</td></tr>
+                <tr><td>Steel Grade (fy)</td><td id="inputFy">-</td></tr>
+                <tr><td>Width (b)</td><td id="inputB">-</td></tr>
+                <tr><td>Depth (d)</td><td id="inputD">-</td></tr>
+            </table>
+        </div>
+
+        <div class="report-card">
+            <h3>Final Verdict</h3>
+            <table class="report-table" id="verdictTable">
+                <tr><th>Check</th><th>Status</th></tr>
+                <tr><td>Design Status</td><td id="designStatus">-</td></tr>
+                <tr><td>Shear Status</td><td id="shearStatus">-</td></tr>
+                <tr><td>Ultimate Moment</td><td id="ultimateMoment">-</td></tr>
+                <tr><td>Limiting Moment</td><td id="limitingMoment">-</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
